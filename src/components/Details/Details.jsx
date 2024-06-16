@@ -10,7 +10,7 @@ export const Details = () => {
             <p>ID: <span>{notification.id}</span></p>
             <p>Store ID: <span>{notification.storeId}</span></p>
             <p>Zone ID: <span>{notification.zoneId}</span></p>
-            <Link to={`edit/${notification.id}`}>Edit</Link>
+            <Link to={`/edit/${notification.id}`}>Edit</Link>
             <Link to="/">Back to List</Link>
         </div>
     )
