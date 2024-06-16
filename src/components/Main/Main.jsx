@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 import s from "./Main.css"
+import { useEffect, useState } from "react"
 
-export const Main = ({ notifications }) => {
+export const Main = () => {
+  const [notifications, changeNoti] = useState([{id: 123, storeId: 123, zoneId: 123}, {id: 113, storeId: 113, zoneId: 113}])
+  useEffect(()=>{document.title = 'Notification Settings'},[])
     return(
         <div>
             <h1>Notification Settings</h1>
@@ -21,9 +24,9 @@ export const Main = ({ notifications }) => {
                     <td>{notification.storeId}</td>
                     <td>{notification.zoneId}</td>
                     <td>
-                      <Link to={`notifications/${notification.id}`}>View</Link>
-                      <Link to={`notifications/edit/${notification.id}`}>Edit</Link>
-                      <form action={`/notifications/delete/${notification.id}`} method="post">
+                      <Link to={`${notification.id}`}>View</Link>
+                      <Link to={`edit/${notification.id}`}>Edit</Link>
+                      <form action={`delete/${notification.id}`} method="post">
                         <button type="submit">Delete</button>
                       </form>
                     </td>
@@ -31,7 +34,7 @@ export const Main = ({ notifications }) => {
                 ))}
               </tbody>
             </table>
-            <Link to="notifications/new">Create New Notification</Link>
+            <Link to="new">Create New Notification</Link>
         </div>
     )
 }
