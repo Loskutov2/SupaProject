@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
+//TODO: Remove this unused import of 's'.
 import s from "./Main.css"
 import { useEffect, useState } from "react"
 
 export const Main = () => {
+  //TODO: Remove this useless assignment to variable "changeNoti".
   const [notifications, changeNoti] = useState([{id: 123, storeId: 123, zoneId: 123}, {id: 113, storeId: 113, zoneId: 113}])
   useEffect(()=>{document.title = 'Notification Settings'},[])
     return(

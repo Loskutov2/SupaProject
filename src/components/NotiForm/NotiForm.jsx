@@ -6,6 +6,7 @@ export const NotiForm = () => {
     // Тут в общем как и в деталях должен с помощью useParams() доставатся id и с помощью него должен проводиться поиск notification с таким id
     // И еще где-то здесь должна быть проверка если id = 'new' и от этого что-то зависит
     // Я это как то так представляю
+  //TODO: Remove this useless assignment to variable "changeNoti".
     const [notification, changeNoti] = useState({id: 123, storeId: 123, zoneId: 123})
     const [formState, setFormState] = useState({
       storeId: notification.storeId || '',
@@ -21,8 +22,8 @@ export const NotiForm = () => {
         [name]: value,
       }));
     };
-  
-  
+
+
     return (
       <div>
         <h1>Notification Form</h1>

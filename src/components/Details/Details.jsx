@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 export const Details = () => {
+  //TODO: Remove this useless assignment to variable "changeNoti".
+  //TODO: The return value of "useState" should be destructured and named symmetrically
     const [notification, changeNoti] = useState({id: 123, storeId: 123, zoneId: 123})
     useEffect(()=>{document.title = 'Notification Detail'},[])
   return(
