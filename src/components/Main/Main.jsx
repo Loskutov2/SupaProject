@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import s from "./Main.css"
 import { useEffect, useState } from "react"
+import notifications from "../../testSource.json"
 
 export const Main = () => {
-  const [notifications, changeNoti] = useState([{id: 123, storeId: 123, zoneId: 123}, {id: 113, storeId: 113, zoneId: 113}])
   useEffect(()=>{document.title = 'Notification Settings'},[])
     return(
         <div>
@@ -34,7 +34,7 @@ export const Main = () => {
                 ))}
               </tbody>
             </table>
-            <Link to="new">Create New Notification</Link>
+            <Link to="edit/new">Create New Notification</Link>
         </div>
     )
 }
