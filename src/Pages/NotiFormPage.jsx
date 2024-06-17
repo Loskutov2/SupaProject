@@ -1,9 +1,9 @@
 import { NotiForm } from "components/NotiForm/NotiForm"
 
-const NotiFormPage = ({ notifications }) => {
+const NotiFormPage = () => {
     return(
         <>
-            <NotiForm notifications={notifications}/>
+            <NotiForm/>
         </>
     )
 }

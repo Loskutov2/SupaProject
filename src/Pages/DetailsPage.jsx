@@ -1,9 +1,9 @@
 import { Details } from "components/Details/Details"
 
-const DetailsPage = ({ notifications }) => {
+const DetailsPage = () => {
     return(
         <>
-            <Details notifications={notifications}/>
+            <Details/>
         </>
     )
 }

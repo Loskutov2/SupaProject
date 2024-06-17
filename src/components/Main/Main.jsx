@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
-import s from "./Main.css"
-import { useEffect, useState } from "react"
-import notifications from "../../testSource.json"
+import s from "./Main.css" // это стили, они нужны
+import { useContext } from "react"
+import { MyContext } from "index"
 
 export const Main = () => {
-  useEffect(()=>{document.title = 'Notification Settings'},[])
+  const notifications = useContext(MyContext)
+  document.title = 'Notification Settings'
     return(
         <div>
             <h1>Notification Settings</h1>

@@ -1,27 +1,25 @@
-import { useEffect, useState } from "react"
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
-import notifications from "../../testSource.json"
-import { nanoid } from "nanoid";
+import { useContext, useState } from "react"
+import { Link, Navigate, useParams } from "react-router-dom"
+import { MyContext } from "index"
 
 
 export const NotiForm = () => {
     const { id } = useParams()
-    const [notification, changeNoti] = useState(id==='new'?{id: nanoid(), storeId: '', zoneId: ''}:notifications.find(obj=>obj.id===id))
+    const notifications = useContext(MyContext)
+    const [notification] = useState(notifications.find(obj=>obj.id===id))
     const [formState, setFormState] = useState(notification?{
       storeId: notification.storeId,
       zoneId: notification.zoneId
     }:null);
 
-    useEffect(()=>{document.title = 'Notification Form'},[])
+    document.title = 'Notification Form'
 
     const handleChange = (e) => {
       const { name, value } = e.target;
       setFormState(prevState => ({
         ...prevState,
         [name]: value,
-      }));
-    };
-  
+      }));}
   
     return(formState?<div>
         <h1>Notification Form</h1>

@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, Navigate, useParams } from "react-router-dom"
-import notifications from "../../testSource.json"
+import { MyContext } from "index"
 
 export const Details = () => {
     const { id } = useParams()
-    const [notification, changeNoti] = useState(notifications.find(obj=>obj.id===id))
+    const notifications = useContext(MyContext)
+    const [notification] = useState(notifications.find(obj=>obj.id===id))
     useEffect(()=>{document.title = 'Notification Detail'},[])
   return(
         notification?<div>

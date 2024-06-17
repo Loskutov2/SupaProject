@@ -1,6 +1,6 @@
 import { Main } from "components/Main/Main"
 
-const MainPage = ({ notifications }) => {
+const MainPage = () => {
     return(
         <>
             <Main/>
